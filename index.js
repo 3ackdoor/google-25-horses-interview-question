@@ -35,12 +35,13 @@ const horses = {
     { horseNumber: 25, time: 34, group: 'e' },
   ],
 }
+// change time property to test !!
 const run = () => {
   console.log('\n======================== Start ========================\n')
   let countRound = 0
   // const maxHorsePerRound = 5
   const findCondition = (
-    array, // หาม้าอันดับที่ 1 ในแต่ละสาย
+    array,
   ) =>
     Object.keys(array).map((k) => {
       ++countRound
@@ -58,14 +59,14 @@ const run = () => {
 
   console.log('ม้าอันดับที่ 1 ในแต่ละสาย')
   console.table(findCondition(horses))
-  // console.log(JSON.stringify(findCondition(horses), null, 4)) // หาม้าอันดับที่ 1 ในแต่ละสาย
-  console.log('firstCountCondition', countRound) // หาม้าอันดับที่ 1 ในแต่ละสาย
+  // console.log(JSON.stringify(findCondition(horses), null, 4))
+  console.log('firstCountCondition', countRound)
   console.log('\n')
 
   let nextCountRound = countRound
 
   const secondCondition = (
-    flat, // หาม้าที่ทำเวลาดีที่สุด ที่ได้จากการแบ่งสาย
+    flat,
   ) =>
     flat
       .map((v) => {
@@ -75,15 +76,15 @@ const run = () => {
       })
       .filter(Boolean)
 
-  nextCountRound++ // หาม้าที่ทำเวลาดีที่สุด ที่ได้จากการแบ่งสาย
+  nextCountRound++
   console.log('ม้าอันดับ 1 ที่แข่งหลังจากการแข่งแบ่งสายเสร็จ')
   console.table(secondCondition(flatten(findCondition(horses))))
-  // console.log(JSON.stringify(secondCondition(flatten(findCondition(horses))), null, 4)) // หาม้าที่ทำเวลาดีที่สุด ที่ได้จากการแบ่งสาย
-  console.log('secondCountCondition', nextCountRound) // หาม้าที่ทำเวลาดีที่สุด ที่ได้จากการแบ่งสาย
+  // console.log(JSON.stringify(secondCondition(flatten(findCondition(horses))), null, 4))
+  console.log('secondCountCondition', nextCountRound)
   console.log('\n')
 
-  const all = findCondition(horses).flat(2) // หาม้าที่เหลือ
-  const firstRank = secondCondition(flatten(findCondition(horses))) // หาม้าที่เหลือ
+  const all = findCondition(horses).flat(2)
+  const firstRank = secondCondition(flatten(findCondition(horses)))
   const finalCondition = all
     .filter((v) => !firstRank.includes(v))
     .map((v, i) => {
@@ -101,12 +102,12 @@ const run = () => {
         return v
       }
     })
-    .filter(Boolean) // หาม้าที่เหลือ
-  nextCountRound++ // หาม้าที่เหลือ
+    .filter(Boolean)
+  nextCountRound++
   console.log('อันดับของม้าที่เหลือ (2 และ 3)')
   console.table(finalCondition)
-  // console.log(JSON.stringify(finalCondition, null, 4)) // หาม้าที่เหลือ
-  console.log('finalCountCondition', nextCountRound) // หาม้าที่เหลือ
+  // console.log(JSON.stringify(finalCondition, null, 4))
+  console.log('finalCountCondition', nextCountRound)
   console.log('\n')
 }
 
