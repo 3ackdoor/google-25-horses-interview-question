@@ -35,7 +35,11 @@ const horses = {
     { horseNumber: 25, time: 34, group: 'e' },
   ],
 }
+
 // change time property to test !!
+// change time property to test !!
+// change time property to test !!
+
 const run = () => {
   console.log('\n======================== Start ========================\n')
   let countRound = 0
