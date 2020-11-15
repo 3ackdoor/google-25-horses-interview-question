@@ -36,9 +36,9 @@ const horses = {
   ],
 }
 
-// change time property to test !!
-// change time property to test !!
-// change time property to test !!
+// change time value to test !!
+// change time value to test !!
+// change time value to test !!
 
 const run = () => {
   console.log('\n======================== Start ========================\n')
